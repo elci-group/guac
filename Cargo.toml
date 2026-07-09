@@ -1,0 +1,28 @@
+[package]
+name = "guac"
+version = "0.1.0"
+edition = "2021"
+authors = ["GUAC"]
+description = "Git + Groq Augmented Cognition"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+clap = { version = "4", features = ["derive"] }
+serde = { version = "1", features = ["derive"] }
+serde_yaml = "0.9"
+serde_json = "1"
+reqwest = { version = "0.12", features = ["json"] }
+chrono = { version = "0.4", features = ["serde", "clock"] }
+dotenvy = "0.15"
+anyhow = "1"
+dirs = "5"
+toml = "0.8"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
+backon = "0.4"
+tempfile = "3"
+
+[dev-dependencies]
+tempfile = "3"
+mockito = "1"
+

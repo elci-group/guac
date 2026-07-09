@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GUAC Site Kit — Components</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="tokens.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-body);
+      color: var(--ink);
+      background: var(--mist);
+      line-height: var(--leading-body);
+      transition: background var(--transition-base), color var(--transition-base);
+    }
+    .container { width: min(100% - 2rem, var(--max-width)); margin-inline: auto; padding: var(--space-xl) 0; }
+    .section { margin-bottom: var(--space-3xl); }
+    .section-title { font-family: var(--font-heading); font-size: var(--text-h2); margin-bottom: var(--space-lg); color: var(--guac-core); }
+    .component-label { font-size: var(--text-small); color: var(--stone); margin-bottom: var(--space-sm); text-transform: uppercase; letter-spacing: 0.05em; }
+
+    /* Nav */
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      height: var(--nav-height); padding: 0 var(--space-xl);
+      background: var(--cloud); border-bottom: 1px solid var(--line);
+      border-radius: var(--radius-md); margin-bottom: var(--space-xl);
+    }
+    .nav-brand { font-family: var(--font-heading); font-weight: 700; color: var(--guac-core); text-decoration: none; font-size: var(--text-h3); display: flex; align-items: center; gap: var(--space-sm); }
+    .nav-links { display: flex; gap: var(--space-lg); list-style: none; }
+    .nav-links a { color: var(--stone); text-decoration: none; font-weight: 500; }
+    .nav-links a:hover { color: var(--guac-pit); }
+
+    /* Dark mode toggle */
+    .theme-toggle {
+      background: transparent; border: 1px solid var(--line); border-radius: var(--radius-full);
+      width: 2.5rem; height: 2.5rem; display: grid; place-items: center; cursor: pointer;
+      color: var(--ink); transition: all var(--transition-fast);
+    }
+    .theme-toggle:hover { border-color: var(--guac-pit); color: var(--guac-pit); }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: var(--space-sm);
+      padding: var(--space-md) var(--space-xl); border-radius: var(--radius-md);
+      font-weight: 600; text-decoration: none; border: none; cursor: pointer;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--guac-flesh); color: var(--guac-core); box-shadow: var(--shadow-sm); }
+    .btn-primary:hover { box-shadow: var(--shadow-md); }
+    .btn-secondary { background: transparent; color: var(--guac-core); border: 1px solid currentColor; }
+    .btn-secondary:hover { background: rgba(13, 59, 46, 0.06); }
+
+    /* Cards */
+    .card {
+      background: var(--cloud); border: 1px solid var(--line); border-radius: var(--radius-lg);
+      padding: var(--space-xl); box-shadow: var(--shadow-sm); color: var(--ink);
+      transition: box-shadow var(--transition-fast), transform var(--transition-fast);
+    }
+    .card:hover { box-shadow: var(--shadow-md); }
+    .card h3 { font-family: var(--font-heading); font-size: var(--text-h3); margin-bottom: var(--space-md); color: var(--guac-core); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); gap: var(--space-xl); }
+
+    /* Testimonial */
+    .testimonial { font-size: var(--text-h3); line-height: var(--leading-h3); font-style: italic; }
+    .testimonial-author { margin-top: var(--space-lg); display: flex; align-items: center; gap: var(--space-md); }
+    .avatar { width: 2.5rem; height: 2.5rem; border-radius: var(--radius-full); background: var(--guac-pit); display: grid; place-items: center; color: var(--cloud); font-weight: 700; font-family: var(--font-heading); }
+
+    /* Comparison table */
+    .comparison { width: 100%; border-collapse: collapse; font-size: var(--text-body); }
+    .comparison th, .comparison td { padding: var(--space-md); text-align: left; border-bottom: 1px solid var(--line); }
+    .comparison th { font-family: var(--font-heading); color: var(--guac-core); background: var(--cloud); }
+    .comparison td { color: var(--ink); }
+    .comparison .yes { color: var(--guac-pit); font-weight: 700; }
+    .comparison .no { color: var(--stone); }
+
+    /* FAQ */
+    .faq details { background: var(--cloud); border: 1px solid var(--line); border-radius: var(--radius-md); margin-bottom: var(--space-md); }
+    .faq summary { padding: var(--space-md) var(--space-lg); cursor: pointer; font-weight: 600; color: var(--guac-core); list-style: none; display: flex; justify-content: space-between; align-items: center; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; font-family: var(--font-heading); font-size: var(--text-h3); }
+    .faq details[open] summary::after { content: "−"; }
+    .faq p { padding: 0 var(--space-lg) var(--space-lg); color: var(--stone); }
+
+    /* Newsletter */
+    .newsletter { display: flex; gap: var(--space-md); max-width: 30rem; }
+    .newsletter input { flex: 1; padding: var(--space-md) var(--space-lg); border-radius: var(--radius-md); border: 1px solid var(--line); background: var(--cloud); color: var(--ink); font-size: var(--text-body); }
+    .newsletter input:focus { outline: 2px solid var(--guac-flesh); outline-offset: 2px; }
+
+    /* Code */
+    .code {
+      font-family: var(--font-mono); font-size: var(--text-mono); background: var(--ink); color: var(--guac-flesh);
+      padding: var(--space-lg); border-radius: var(--radius-md); overflow-x: auto;
+    }
+
+    /* Feature callout */
+    .callout { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); align-items: center; }
+    @media (max-width: 768px) { .callout { grid-template-columns: 1fr; } }
+
+    /* Footer */
+    .footer {
+      background: var(--ink); color: var(--mist); padding: var(--space-2xl) var(--space-xl);
+      border-radius: var(--radius-lg); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-lg);
+    }
+    .footer a { color: var(--guac-flesh); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="section">
+      <h1 class="section-title">GUAC Site Kit</h1>
+      <p>A reusable, dependency-free design system for GUAC web properties. Toggle the theme with the button below.</p>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+    </div>
+
+    <div class="section">
+      <div class="component-label">Navigation</div>
+      <nav class="nav">
+        <a class="nav-brand" href="#"><img src="../assets/logo-icon.svg" alt="" width="28" height="28"> GUAC</a>
+        <ul class="nav-links">
+          <li><a href="#">Docs</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">GitHub</a></li>
+        </ul>
+        <a href="#" class="btn btn-primary">Get Started</a>
+      </nav>
+    </div>
+
+    <div class="section">
+      <div class="component-label">Buttons</div>
+      <div style="display:flex; gap: var(--space-md); flex-wrap: wrap;">
+        <a href="#" class="btn btn-primary">Primary</a>
+        <a href="#" class="btn btn-secondary">Secondary</a>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="component-label">Feature Cards</div>
+      <div class="grid">
+        <div class="card"><h3>Git-Native Memory</h3><p>Every turn is a commit. Branch, diff, and rollback.</p></div>
+        <div class="card"><h3>Knowledge Graph</h3><p>Deterministic YAML facts instead of fuzzy vectors.</p></div>
+        <div class="card"><h3>Compression</h3><p>Infinite memory via recursive summarisation.</p></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="component-label">Testimonial</div>
+      <div class="card">
+        <blockquote class="testimonial">“GUAC finally gave our AI characters a memory we can inspect, version, and trust.”</blockquote>
+        <div class="testimonial-author">
+          <div class="avatar">R</div>
+          <div><strong>Rory</strong><br><span style="color: var(--stone);">Founder, FireBAC</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="component-label">Comparison Table</div>
+      <table class="comparison">
+        <thead><tr><th>Capability</th><th>GUAC</th><th>Vector DB</th><th>Prompt Stuffing</th></tr></thead>
+        <tbody>
+          <tr><td>Deterministic retrieval</td><td class="yes">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
+          <tr><td>Version control</td><td class="yes">✓</td><td class="no">—</td><td class="no">—</td></tr>
+          <tr><td>Auditable history</td><td class="yes">✓</td><td class="no">—</td><td class="no">—</td></tr>
+          <tr><td>Compression</td><td class="yes">✓</td><td class="no">—</td><td class="no">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="component-label">FAQ Accordion</div>
+      <div class="faq">
+        <details><summary>What makes GUAC different from a vector database?</summary><p>Vector databases approximate relevance. GUAC uses structured knowledge graphs and addressable conversation history for deterministic retrieval.</p></details>
+        <details><summary>Can I self-host GUAC?</summary><p>Yes. The core CLI is MIT-licensed and runs locally. Commercial tiers add cloud sync and enterprise controls.</p></details>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="component-label">Newsletter Signup</div>
+      <form class="newsletter" onsubmit="event.preventDefault(); alert('Subscribed.');">
+        <input type="email" placeholder="you@company.com" required aria-label="Email address">
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
+    </div>
+
+    <div class="section">
+      <div class="component-label">Feature Callout with Code</div>
+      <div class="card callout">
+        <div>
+          <h3>Install in seconds</h3>
+          <p>One command gives your agent a persistent memory.</p>
+          <a href="#" class="btn btn-primary">Read the docs</a>
+        </div>
+        <pre class="code">guac init
+guac chat</pre>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="component-label">Footer</div>
+      <footer class="footer">
+        <div><strong>GUAC</strong> — Memory that thinks.</div>
+        <div><a href="#">Docs</a> · <a href="#">GitHub</a> · <a href="#">Company</a></div>
+      </footer>
+    </div>
+
+  </div>
+
+  <script>
+    const toggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
+    function applyTheme(theme) {
+      root.setAttribute('data-theme', theme);
+      toggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+    }
+    const saved = localStorage.getItem('guac-theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    applyTheme(saved || (prefersDark ? 'dark' : 'light'));
+    toggle.addEventListener('click', () => {
+      const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      localStorage.setItem('guac-theme', next);
+      applyTheme(next);
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About GUAC — the team and mission behind Git-native cognition for AI systems.">
+  <meta property="og:title" content="About GUAC">
+  <meta property="og:description" content="The mission, story, and team behind memory infrastructure for AI.">
+  <title>About — GUAC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site-kit/tokens.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="assets/logo-icon.svg" type="image/svg+xml">
+</head>
+<body>
+
+  <nav class="nav">
+    <a class="nav-brand" href="index.html" aria-label="GUAC home">
+      <img src="assets/logo-icon.svg" alt="" width="32" height="32">
+      <span>GUAC</span>
+    </a>
+    <button class="mobile-menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
+    <ul class="nav-links" id="navMenu" hidden>
+      <li><a href="index.html#features">Features</a></li>
+      <li><a href="index.html#comparison">Compare</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="docs.html">Docs</a></li>
+      <li><a href="press.html">Press</a></li>
+      <li><a href="https://github.com/guac-ai/guac">GitHub</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="btn btn-primary" href="index.html#waitlist">Join waitlist</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <h1>About GUAC</h1>
+      <p class="hero-subtitle">We are building the memory infrastructure that AI systems deserve.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container" style="max-width: var(--content-width);">
+        <div class="section-header reveal">
+          <span class="eyebrow">Mission</span>
+          <h2>Give every AI system a persistent, structured, version-controlled memory.</h2>
+        </div>
+        <p class="reveal" style="margin-bottom: var(--space-lg); color: var(--stone);">
+          GUAC started with a simple observation: large language models are incredible reasoning engines, but they are terrible at remembering. Every session begins from scratch. Facts drift. Context windows fill up. Vector search returns "probably relevant" instead of "exactly right."
+        </p>
+        <p class="reveal" style="margin-bottom: var(--space-lg); color: var(--stone);">
+          We believe memory should be treated as infrastructure, not an emergent property of prompt engineering. So we built GUAC: a Git-native knowledge graph and conversation memory system that gives AI deterministic retrieval, branching history, and temporal compression.
+        </p>
+        <p class="reveal" style="color: var(--stone);">
+          The result is closer to an operating system for thought than a chatbot with a longer context window.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" style="background: var(--cloud);">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow">Values</span>
+          <h2>How we work.</h2>
+        </div>
+        <div class="feature-grid">
+          <div class="card reveal">
+            <h3>Trust through transparency</h3>
+            <p>Memory is too important to be a black box. Every fact, every conversation, every change is inspectable and versioned.</p>
+          </div>
+          <div class="card reveal">
+            <h3>Open core</h3>
+            <p>The GUAC CLI is MIT-licensed. Commercial features are additive, not extractive.</p>
+          </div>
+          <div class="card reveal">
+            <h3>Engineering first</h3>
+            <p>We ship clean, fast, reliable systems. No hype, no vapourware, no magical claims.</p>
+          </div>
+          <div class="card reveal">
+            <h3>Research-minded</h3>
+            <p>Memory is a hard problem. We treat compression, consistency, and retrieval as active research areas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" style="max-width: var(--content-width);">
+        <div class="section-header reveal">
+          <span class="eyebrow">Team</span>
+          <h2>A small team with a big idea.</h2>
+        </div>
+        <p class="reveal" style="color: var(--stone);">
+          GUAC is built by engineers and researchers who have shipped production AI systems and felt the pain of forgetful models firsthand. We are distributed, async-first, and always hiring exceptional Rust engineers, applied AI researchers, and developer advocates.
+        </p>
+        <div class="get-started-actions reveal" style="margin-top: var(--space-xl);">
+          <a class="btn btn-primary" href="https://github.com/guac-ai/guac">Contribute on GitHub</a>
+          <a class="btn btn-secondary" href="press.html">Press contact</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div><strong>GUAC</strong><p>Memory that thinks.</p></div>
+      <div class="footer-links">
+        <a href="docs.html">Docs</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="press.html">Press</a>
+        <a href="https://github.com/guac-ai/guac">GitHub</a>
+      </div>
+      <div class="footer-copy">© 2026 GUAC Labs. MIT licensed core.</div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
+    function applyTheme(theme) { root.setAttribute('data-theme', theme); toggle.textContent = theme === 'dark' ? '☀️' : '🌙'; }
+    const saved = localStorage.getItem('guac-theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    applyTheme(saved || (prefersDark ? 'dark' : 'light'));
+    toggle.addEventListener('click', () => { const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'; localStorage.setItem('guac-theme', next); applyTheme(next); });
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const navMenu = document.getElementById('navMenu');
+    menuBtn.addEventListener('click', () => { const expanded = menuBtn.getAttribute('aria-expanded') === 'true'; menuBtn.setAttribute('aria-expanded', !expanded); navMenu.hidden = expanded; });
+    const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }); }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

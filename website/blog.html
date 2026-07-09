@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GUAC blog — essays on AI memory, knowledge graphs, compression, and the future of cognitive infrastructure.">
+  <meta property="og:title" content="GUAC Blog">
+  <meta property="og:description" content="Essays on AI memory, knowledge graphs, and cognitive infrastructure.">
+  <title>Blog — GUAC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site-kit/tokens.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="assets/logo-icon.svg" type="image/svg+xml">
+</head>
+<body>
+
+  <nav class="nav">
+    <a class="nav-brand" href="index.html" aria-label="GUAC home">
+      <img src="assets/logo-icon.svg" alt="" width="32" height="32">
+      <span>GUAC</span>
+    </a>
+    <button class="mobile-menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
+    <ul class="nav-links" id="navMenu" hidden>
+      <li><a href="index.html#features">Features</a></li>
+      <li><a href="index.html#comparison">Compare</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="docs.html">Docs</a></li>
+      <li><a href="press.html">Press</a></li>
+      <li><a href="https://github.com/guac-ai/guac">GitHub</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="btn btn-primary" href="index.html#waitlist">Join waitlist</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <h1>Memory Stack</h1>
+      <p class="hero-subtitle">Essays on AI memory, knowledge graphs, compression, and the future of cognitive infrastructure.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container" style="max-width: var(--content-width);">
+
+        <article class="card reveal" style="margin-bottom: var(--space-xl);">
+          <span class="eyebrow">Architecture</span>
+          <h2 style="font-family: var(--font-heading); font-size: var(--text-h2); margin: var(--space-sm) 0 var(--space-md);"><a href="#" style="color: var(--guac-core); text-decoration: none;">Why vector search is the wrong abstraction for AI memory</a></h2>
+          <p style="color: var(--stone); margin-bottom: var(--space-md);">Vector databases solved similarity, but memory needs truth. This post argues for structured, addressable memory over approximate retrieval.</p>
+          <span style="font-size: var(--text-small); color: var(--stone);">20 June 2026 · 8 min read</span>
+        </article>
+
+        <article class="card reveal" style="margin-bottom: var(--space-xl);">
+          <span class="eyebrow">Engineering</span>
+          <h2 style="font-family: var(--font-heading); font-size: var(--text-h2); margin: var(--space-sm) 0 var(--space-md);"><a href="#" style="color: var(--guac-core); text-decoration: none;">Building a Git-native cognitive architecture</a></h2>
+          <p style="color: var(--stone); margin-bottom: var(--space-md);">How we use Git as the persistence engine for conversation memory, and why every interaction becomes a commit.</p>
+          <span style="font-size: var(--text-small); color: var(--stone);">27 June 2026 · 12 min read</span>
+        </article>
+
+        <article class="card reveal" style="margin-bottom: var(--space-xl);">
+          <span class="eyebrow">Research</span>
+          <h2 style="font-family: var(--font-heading); font-size: var(--text-h2); margin: var(--space-sm) 0 var(--space-md);"><a href="#" style="color: var(--guac-core); text-decoration: none;">Temporal compression for infinite conversation memory</a></h2>
+          <p style="color: var(--stone); margin-bottom: var(--space-md);">Recursively summarising old conversations while preserving key facts, decisions, and emotional salience.</p>
+          <span style="font-size: var(--text-small); color: var(--stone);">4 July 2026 · 10 min read</span>
+        </article>
+
+        <article class="card reveal" style="margin-bottom: var(--space-xl);">
+          <span class="eyebrow">Characters</span>
+          <h2 style="font-family: var(--font-heading); font-size: var(--text-h2); margin: var(--space-sm) 0 var(--space-md);"><a href="#" style="color: var(--guac-core); text-decoration: none;">Character engines: immutable core + mutable memory</a></h2>
+          <p style="color: var(--stone); margin-bottom: var(--space-md);">How to build AI characters that evolve without losing identity, using a strict separation between core values and learned facts.</p>
+          <span style="font-size: var(--text-small); color: var(--stone);">11 July 2026 · 7 min read</span>
+        </article>
+
+        <div class="reveal" style="text-align: center; margin-top: var(--space-2xl);">
+          <a class="btn btn-secondary" href="index.html#waitlist">Subscribe to the newsletter</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div><strong>GUAC</strong><p>Memory that thinks.</p></div>
+      <div class="footer-links">
+        <a href="docs.html">Docs</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="press.html">Press</a>
+        <a href="https://github.com/guac-ai/guac">GitHub</a>
+      </div>
+      <div class="footer-copy">© 2026 GUAC Labs. MIT licensed core.</div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
+    function applyTheme(theme) { root.setAttribute('data-theme', theme); toggle.textContent = theme === 'dark' ? '☀️' : '🌙'; }
+    const saved = localStorage.getItem('guac-theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    applyTheme(saved || (prefersDark ? 'dark' : 'light'));
+    toggle.addEventListener('click', () => { const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'; localStorage.setItem('guac-theme', next); applyTheme(next); });
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const navMenu = document.getElementById('navMenu');
+    menuBtn.addEventListener('click', () => { const expanded = menuBtn.getAttribute('aria-expanded') === 'true'; menuBtn.setAttribute('aria-expanded', !expanded); navMenu.hidden = expanded; });
+    const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }); }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+/target
+/memory
+/.env
+*.swp
+*.log
+/.amber
+/.kaptaind
+/VERSION

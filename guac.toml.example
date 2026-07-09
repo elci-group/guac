@@ -1,0 +1,19 @@
+# Example GUAC configuration file.
+# Copy to guac.toml (or ~/.config/guac/guac.toml) and customise.
+
+# Groq configuration
+groq_api_key = "gsk_..."
+groq_model = "llama-3.1-8b-instant"
+
+# Memory tuning
+max_context_messages = 10
+max_memory_messages = 50
+compression_threshold = 20
+memory_threshold = 0.25
+
+# Memory scoring weights
+[score_weights]
+importance = 0.35
+novelty = 0.25
+recency = 0.25
+repetition = 0.15

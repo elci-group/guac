@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GUAC gives AI systems a Git-native cognitive substrate: structured knowledge graphs, version-controlled conversation memory, and ultra-low-latency reasoning.">
+  <meta name="theme-color" content="#0D3B2E">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="GUAC — Memory that thinks">
+  <meta property="og:description" content="Git-native cognition for AI systems. Structured memory, deterministic retrieval, ultra-low-latency reasoning.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://guac.ai/">
+  <meta property="og:image" content="https://guac.ai/assets/logo-dark.svg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GUAC — Memory that thinks">
+  <meta name="twitter:description" content="Git-native cognition for AI systems.">
+  <meta name="twitter:image" content="https://guac.ai/assets/logo-dark.svg">
+
+  <title>GUAC — Memory that thinks</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site-kit/tokens.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="assets/logo-icon.svg" type="image/svg+xml">
+</head>
+<body>
+
+  <nav class="nav">
+    <a class="nav-brand" href="index.html" aria-label="GUAC home">
+      <img src="assets/logo-icon.svg" alt="" width="32" height="32">
+      <span>GUAC</span>
+    </a>
+
+    <button class="mobile-menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
+
+    <ul class="nav-links" id="navMenu" hidden>
+      <li><a href="index.html#features">Features</a></li>
+      <li><a href="index.html#architecture">Architecture</a></li>
+      <li><a href="index.html#comparison">Compare</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="docs.html">Docs</a></li>
+      <li><a href="press.html">Press</a></li>
+      <li><a href="https://github.com/guac-ai/guac">GitHub</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <a class="btn btn-primary" href="index.html#waitlist">Join waitlist</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <h1>Memory that thinks.</h1>
+      <p class="hero-subtitle">GUAC gives AI systems a Git-native cognitive substrate: structured knowledge graphs, version-controlled conversation memory, and ultra-low-latency reasoning.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#get-started">Install GUAC</a>
+        <a class="btn btn-secondary" href="#architecture">See how it works</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>&lt;50ms</strong><span>end-to-end target</span></div>
+        <div><strong>Git</strong><span>deterministic memory</span></div>
+        <div><strong>Groq</strong><span>low-latency inference</span></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="section problem" id="problem">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow">The problem</span>
+          <h2>Models are forced to remember things they were never built to remember.</h2>
+        </div>
+        <div class="problem-grid">
+          <div class="card reveal">
+            <h3>Vector search is fuzzy</h3>
+            <p>Embedding-based retrieval approximates relevance. It cannot guarantee that the right fact comes back.</p>
+          </div>
+          <div class="card reveal">
+            <h3>Prompt stuffing is expensive</h3>
+            <p>Dumping history into the context window burns tokens and degrades attention over long sessions.</p>
+          </div>
+          <div class="card reveal">
+            <h3>State drifts silently</h3>
+            <p>Without versioning, a character’s memory becomes a black box. You cannot diff, branch, or rollback.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow">The solution</span>
+          <h2>Memory as infrastructure.</h2>
+          <p>GUAC treats memory as a first-class system component: queryable, versioned, and compressible.</p>
+        </div>
+        <div class="feature-grid">
+          <div class="card feature-card reveal">
+            <div class="feature-icon">🌿</div>
+            <h3>Core Knowledge Graph</h3>
+            <p>Stable facts live as structured YAML. Relationships are deterministic, not approximate.</p>
+          </div>
+          <div class="card feature-card reveal">
+            <div class="feature-icon">🌳</div>
+            <h3>Git-Native Memory</h3>
+            <p>Every turn becomes a commit. Branch conversations, inspect diffs, and rollback state.</p>
+          </div>
+          <div class="card feature-card reveal">
+            <div class="feature-icon">🧠</div>
+            <h3>Natural Memory Layer</h3>
+            <p>Messages are scored on importance, novelty, recency, and repetition. Only salient memories survive.</p>
+          </div>
+          <div class="card feature-card reveal">
+            <div class="feature-icon">📦</div>
+            <h3>Filesystem Addressing</h3>
+            <p>Query memory by path: <code>/memory/projects/firebac/warfare</code>. No semantic search required.</p>
+          </div>
+          <div class="card feature-card reveal">
+            <div class="feature-icon">🗜️</div>
+            <h3>Temporal Compression</h3>
+            <p>Old conversations are recursively summarized, giving AI effectively infinite memory.</p>
+          </div>
+          <div class="card feature-card reveal">
+            <div class="feature-icon">⚡</div>
+            <h3>Groq Reasoning Layer</h3>
+            <p>Ultra-low-latency inference turns retrieved context into responses in milliseconds.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section architecture" id="architecture">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow">Architecture</span>
+          <h2>From input to commit.</h2>
+        </div>
+        <pre class="diagram reveal">
+User Input
+    │
+    ▼
+Intent Classifier ──▶ Memory Router
+                           │
+           ┌───────────────┴───────────────┐
+           ▼                               ▼
+  Knowledge Graph Lookup        Conversation History Search
+           │                               │
+           └───────────────┬───────────────┘
+                           ▼
+                   Context Assembler
+                           │
+                           ▼
+                      Groq LLM
+                           │
+                           ▼
+              Response + Memory Delta
+                           │
+                           ▼
+                     Git Commit
+        </pre>
+        <p class="diagram-caption reveal">Every query routes through structured retrieval before inference. The model reasons over memory; it does not invent it.</p>
+      </div>
+    </section>
+
+    <section class="section comparison-section" id="comparison">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow">Compare</span>
+          <h2>Not a vector database. Not prompt stuffing.</h2>
+        </div>
+        <div class="table-wrapper reveal" style="overflow-x: auto;">
+          <table class="comparison">
+            <thead>
+              <tr><th>Capability</th><th class="guac-col">GUAC</th><th>Vector DB</th><th>Prompt Stuffing</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Deterministic retrieval</td><td class="yes guac-col">✓</td><td class="no">—</td><td class="yes">✓</td></tr>
+              <tr><td>Exact knowledge-graph lookups</td><td class="yes guac-col">✓</td><td class="no">—</td><td class="no">—</td></tr>
+              <tr><td>Version-controlled memory</td><td class="yes guac-col">✓</td><td class="no">—</td><td class="no">—</td></tr>
+              <tr><td>Branch / diff / rollback</td><td class="yes guac-col">✓</td><td class="no">—</td><td class="no">—</td></tr>
+              <tr><td>Temporal compression</td><td class="yes guac-col">✓</td><td class="no">—</td><td class="no">—</td></tr>
+              <tr><td>Audit history</td><td class="yes guac-col">✓</td><td class="no">—</td><td class="no">—</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="use-cases">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow">Use cases</span>
+          <h2>Built for systems that need to remember.</h2>
+        </div>
+        <div class="usecase-grid">
+          <div class="card usecase-card reveal">
+            <h3>AI Characters</h3>
+            <p>Immutable core personality plus mutable learned memory. Characters evolve without identity loss.</p>
+          </div>
+          <div class="card usecase-card reveal">
+            <h3>Agent Orchestration</h3>
+            <p>Long-running agents keep state across sessions, tools, and failures with full audit history.</p>
+          </div>
+          <div class="card usecase-card reveal">
+            <h3>Research & Simulation</h3>
+            <p>Reproducible memory substrates for cognitive science, game worlds, and multi-agent experiments.</p>
+          </div>
+          <div class="card usecase-card reveal">
+            <h3>Enterprise Assistants</h3>
+            <p>Structured organizational knowledge and conversation history that compliance teams can inspect.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="testimonials" style="background: var(--cloud);">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow">Social proof</span>
+          <h2>What builders are saying.</h2>
+        </div>
+        <div class="testimonial-grid">
+          <div class="card reveal">
+            <blockquote class="testimonial">“GUAC finally gave our AI characters a memory we can inspect, version, and trust.”</blockquote>
+            <div class="testimonial-author">
+              <div class="avatar">R</div>
+              <div><strong>Rory</strong><br><span style="color: var(--stone);">Founder, FireBAC</span></div>
+            </div>
+          </div>
+          <div class="card reveal">
+            <blockquote class="testimonial">“Replacing vector search with addressable memory paths changed how we think about retrieval.”</blockquote>
+            <div class="testimonial-author">
+              <div class="avatar">A</div>
+              <div><strong>Engineering Lead</strong><br><span style="color: var(--stone);">AI Platform Team</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section get-started" id="get-started">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow">Get started</span>
+          <h2>Install in seconds.</h2>
+        </div>
+        <pre class="code-block reveal"><code>git clone https://github.com/guac-ai/guac.git
+cd guac
+cargo build --release
+./target/release/guac init
+./target/release/guac chat</code></pre>
+        <div class="get-started-actions reveal">
+          <a class="btn btn-primary" href="https://github.com/guac-ai/guac">View on GitHub</a>
+          <a class="btn btn-secondary" href="docs.html">Read the docs</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pricing" id="pricing">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow">Pricing</span>
+          <h2>Start free. Scale with trust.</h2>
+        </div>
+        <div class="pricing-grid">
+          <div class="card pricing-card reveal">
+            <h3>Developer</h3>
+            <div class="price">Free</div>
+            <p>Self-hosted GUAC CLI, MIT license, community support.</p>
+            <ul>
+              <li>Unlimited local memory repos</li>
+              <li>Knowledge graph & compression</li>
+              <li>Branching & Git history</li>
+            </ul>
+            <a class="btn btn-secondary" href="#get-started">Install</a>
+          </div>
+          <div class="card pricing-card featured reveal">
+            <div class="badge">Early access</div>
+            <h3>Team</h3>
+            <div class="price">$49<span>/seat/mo</span></div>
+            <p>Hosted memory sync, shared knowledge graphs, and priority support.</p>
+            <ul>
+              <li>Cloud memory replicas</li>
+              <li>Team knowledge graphs</li>
+              <li>Compression analytics</li>
+              <li>Slack support</li>
+            </ul>
+            <a class="btn btn-primary" href="#waitlist">Join waitlist</a>
+          </div>
+          <div class="card pricing-card reveal">
+            <h3>Enterprise</h3>
+            <div class="price">Custom</div>
+            <p>Private deployment, SSO, audit logs, and bespoke memory architecture.</p>
+            <ul>
+              <li>On-premise or VPC</li>
+              <li>SSO & SCIM</li>
+              <li>Audit & compliance exports</li>
+              <li>Dedicated success engineer</li>
+            </ul>
+            <a class="btn btn-secondary" href="press.html">Contact sales</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq" style="background: var(--cloud);">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow">FAQ</span>
+          <h2>Questions, answered.</h2>
+        </div>
+        <div class="faq">
+          <details class="reveal">
+            <summary>What makes GUAC different from a vector database?</summary>
+            <p>Vector databases approximate relevance with embeddings. GUAC uses structured knowledge graphs and addressable conversation history for deterministic retrieval.</p>
+          </details>
+          <details class="reveal">
+            <summary>Can I self-host GUAC?</summary>
+            <p>Yes. The core CLI is MIT-licensed and runs entirely on your machine. Commercial tiers add cloud sync, team collaboration, and enterprise controls.</p>
+          </details>
+          <details class="reveal">
+            <summary>Does GUAC require Groq?</summary>
+            <p>No. Groq is the default for low-latency inference, but the CLI falls back to a local echo mode and the future server will support multiple inference providers.</p>
+          </details>
+          <details class="reveal">
+            <summary>How does temporal compression work?</summary>
+            <p>Old messages are recursively summarized into higher-level summaries. Individual low-score messages are pruned, while key facts and narratives are preserved.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section waitlist" id="waitlist">
+      <div class="container">
+        <h2 class="reveal">Be the first to ship memory-native AI.</h2>
+        <p class="reveal">Join the waitlist for hosted GUAC, team features, and the memory compression API.</p>
+        <form class="waitlist-form reveal" id="waitlistForm">
+          <input type="email" id="waitlistEmail" placeholder="you@company.com" required aria-label="Email address">
+          <button type="submit" class="btn btn-primary">Join waitlist</button>
+          <div class="form-message" id="formMessage" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>GUAC</strong>
+        <p>Memory that thinks.</p>
+      </div>
+      <div class="footer-links">
+        <a href="docs.html">Docs</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="press.html">Press</a>
+        <a href="../company/brand-aesthetic.md">Brand</a>
+        <a href="https://github.com/guac-ai/guac">GitHub</a>
+      </div>
+      <div class="footer-copy">© 2026 GUAC Labs. MIT licensed core.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Theme toggle
+    const toggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
+    function applyTheme(theme) {
+      root.setAttribute('data-theme', theme);
+      toggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+    }
+    const saved = localStorage.getItem('guac-theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    applyTheme(saved || (prefersDark ? 'dark' : 'light'));
+    toggle.addEventListener('click', () => {
+      const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      localStorage.setItem('guac-theme', next);
+      applyTheme(next);
+    });
+
+    // Mobile menu
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const navMenu = document.getElementById('navMenu');
+    menuBtn.addEventListener('click', () => {
+      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', !expanded);
+      navMenu.hidden = expanded;
+    });
+
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Waitlist form
+    document.getElementById('waitlistForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('waitlistEmail').value;
+      const msg = document.getElementById('formMessage');
+      msg.textContent = 'Thanks — ' + email + ' is on the list.';
+      document.getElementById('waitlistEmail').value = '';
+    });
+  </script>
+
+</body>
+</html>
